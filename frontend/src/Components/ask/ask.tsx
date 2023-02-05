@@ -23,25 +23,27 @@ export default function Questions() {
     })
     .then(() => navigate("/"))
   }
-  
+
   return (
     <div className='ask'>
+      <p>New Question</p>
       <form onSubmit={submitForm}>
       <label>
-        Title:
         <input type="text" 
               name="title" 
               value={title}
+              placeholder='enter your question title'
               onChange={(e) => setTitle(e.target.value)}/>
-      </label>
+      </label> <br/>
       <label>
-        Content:
-        <input type="text"
+        <textarea 
               name="content" 
+              className='content'
               value={content}
+              placeholder='write your question here'
               onChange={(e) => setContent(e.target.value)}/>
       </label>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Post" className='submit'/>
       </form>
     </div> 
   )
